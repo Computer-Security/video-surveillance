@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C914E34E1E5F8583006D6EEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914E34D1E5F8583006D6EEA /* AppDelegate.swift */; };
+		C914E3501E5F8583006D6EEA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914E34F1E5F8583006D6EEA /* FirstViewController.swift */; };
+		C914E3521E5F8583006D6EEA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914E3511E5F8583006D6EEA /* SecondViewController.swift */; };
+		C914E3551E5F8583006D6EEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C914E3531E5F8583006D6EEA /* Main.storyboard */; };
+		C914E3571E5F8583006D6EEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C914E3561E5F8583006D6EEA /* Assets.xcassets */; };
+		C914E35A1E5F8583006D6EEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C914E3581E5F8583006D6EEA /* LaunchScreen.storyboard */; };
+		C914E3651E5F8583006D6EEA /* Pi_SpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914E3641E5F8583006D6EEA /* Pi_SpyTests.swift */; };
+		C914E3701E5F8991006D6EEA /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914E36F1E5F8991006D6EEA /* ThirdViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C914E3611E5F8583006D6EEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C914E3421E5F8582006D6EEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C914E3491E5F8582006D6EEA;
+			remoteInfo = "Pi-Spy";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C914E34A1E5F8583006D6EEA /* Pi-Spy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pi-Spy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C914E34D1E5F8583006D6EEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C914E34F1E5F8583006D6EEA /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		C914E3511E5F8583006D6EEA /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		C914E3541E5F8583006D6EEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C914E3561E5F8583006D6EEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C914E3591E5F8583006D6EEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C914E35B1E5F8583006D6EEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C914E3601E5F8583006D6EEA /* Pi-SpyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pi-SpyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C914E3641E5F8583006D6EEA /* Pi_SpyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pi_SpyTests.swift; sourceTree = "<group>"; };
+		C914E3661E5F8583006D6EEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C914E36F1E5F8991006D6EEA /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C914E3471E5F8582006D6EEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C914E35D1E5F8583006D6EEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C914E3411E5F8582006D6EEA = {
+			isa = PBXGroup;
+			children = (
+				C914E34C1E5F8583006D6EEA /* Pi-Spy */,
+				C914E3631E5F8583006D6EEA /* Pi-SpyTests */,
+				C914E34B1E5F8583006D6EEA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C914E34B1E5F8583006D6EEA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C914E34A1E5F8583006D6EEA /* Pi-Spy.app */,
+				C914E3601E5F8583006D6EEA /* Pi-SpyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C914E34C1E5F8583006D6EEA /* Pi-Spy */ = {
+			isa = PBXGroup;
+			children = (
+				C914E34D1E5F8583006D6EEA /* AppDelegate.swift */,
+				C914E34F1E5F8583006D6EEA /* FirstViewController.swift */,
+				C914E3511E5F8583006D6EEA /* SecondViewController.swift */,
+				C914E36F1E5F8991006D6EEA /* ThirdViewController.swift */,
+				C914E3531E5F8583006D6EEA /* Main.storyboard */,
+				C914E3561E5F8583006D6EEA /* Assets.xcassets */,
+				C914E3581E5F8583006D6EEA /* LaunchScreen.storyboard */,
+				C914E35B1E5F8583006D6EEA /* Info.plist */,
+			);
+			path = "Pi-Spy";
+			sourceTree = "<group>";
+		};
+		C914E3631E5F8583006D6EEA /* Pi-SpyTests */ = {
+			isa = PBXGroup;
+			children = (
+				C914E3641E5F8583006D6EEA /* Pi_SpyTests.swift */,
+				C914E3661E5F8583006D6EEA /* Info.plist */,
+			);
+			path = "Pi-SpyTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C914E3491E5F8582006D6EEA /* Pi-Spy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C914E3691E5F8583006D6EEA /* Build configuration list for PBXNativeTarget "Pi-Spy" */;
+			buildPhases = (
+				C914E3461E5F8582006D6EEA /* Sources */,
+				C914E3471E5F8582006D6EEA /* Frameworks */,
+				C914E3481E5F8582006D6EEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pi-Spy";
+			productName = "Pi-Spy";
+			productReference = C914E34A1E5F8583006D6EEA /* Pi-Spy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C914E35F1E5F8583006D6EEA /* Pi-SpyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C914E36C1E5F8583006D6EEA /* Build configuration list for PBXNativeTarget "Pi-SpyTests" */;
+			buildPhases = (
+				C914E35C1E5F8583006D6EEA /* Sources */,
+				C914E35D1E5F8583006D6EEA /* Frameworks */,
+				C914E35E1E5F8583006D6EEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C914E3621E5F8583006D6EEA /* PBXTargetDependency */,
+			);
+			name = "Pi-SpyTests";
+			productName = "Pi-SpyTests";
+			productReference = C914E3601E5F8583006D6EEA /* Pi-SpyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C914E3421E5F8582006D6EEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Home Surveillance Inc.";
+				TargetAttributes = {
+					C914E3491E5F8582006D6EEA = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					C914E35F1E5F8583006D6EEA = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C914E3491E5F8582006D6EEA;
+					};
+				};
+			};
+			buildConfigurationList = C914E3451E5F8582006D6EEA /* Build configuration list for PBXProject "Pi-Spy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C914E3411E5F8582006D6EEA;
+			productRefGroup = C914E34B1E5F8583006D6EEA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C914E3491E5F8582006D6EEA /* Pi-Spy */,
+				C914E35F1E5F8583006D6EEA /* Pi-SpyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C914E3481E5F8582006D6EEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C914E35A1E5F8583006D6EEA /* LaunchScreen.storyboard in Resources */,
+				C914E3571E5F8583006D6EEA /* Assets.xcassets in Resources */,
+				C914E3551E5F8583006D6EEA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C914E35E1E5F8583006D6EEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C914E3461E5F8582006D6EEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C914E3521E5F8583006D6EEA /* SecondViewController.swift in Sources */,
+				C914E34E1E5F8583006D6EEA /* AppDelegate.swift in Sources */,
+				C914E3701E5F8991006D6EEA /* ThirdViewController.swift in Sources */,
+				C914E3501E5F8583006D6EEA /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C914E35C1E5F8583006D6EEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C914E3651E5F8583006D6EEA /* Pi_SpyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C914E3621E5F8583006D6EEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C914E3491E5F8582006D6EEA /* Pi-Spy */;
+			targetProxy = C914E3611E5F8583006D6EEA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C914E3531E5F8583006D6EEA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C914E3541E5F8583006D6EEA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C914E3581E5F8583006D6EEA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C914E3591E5F8583006D6EEA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C914E3671E5F8583006D6EEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C914E3681E5F8583006D6EEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C914E36A1E5F8583006D6EEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Pi-Spy/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.nyu.cims.pcs.Pi-Spy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C914E36B1E5F8583006D6EEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Pi-Spy/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.nyu.cims.pcs.Pi-Spy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		C914E36D1E5F8583006D6EEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Pi-SpyTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.nyu.cims.pcs.Pi-SpyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pi-Spy.app/Pi-Spy";
+			};
+			name = Debug;
+		};
+		C914E36E1E5F8583006D6EEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Pi-SpyTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.nyu.cims.pcs.Pi-SpyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pi-Spy.app/Pi-Spy";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C914E3451E5F8582006D6EEA /* Build configuration list for PBXProject "Pi-Spy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C914E3671E5F8583006D6EEA /* Debug */,
+				C914E3681E5F8583006D6EEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C914E3691E5F8583006D6EEA /* Build configuration list for PBXNativeTarget "Pi-Spy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C914E36A1E5F8583006D6EEA /* Debug */,
+				C914E36B1E5F8583006D6EEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C914E36C1E5F8583006D6EEA /* Build configuration list for PBXNativeTarget "Pi-SpyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C914E36D1E5F8583006D6EEA /* Debug */,
+				C914E36E1E5F8583006D6EEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C914E3421E5F8582006D6EEA /* Project object */;
+}
