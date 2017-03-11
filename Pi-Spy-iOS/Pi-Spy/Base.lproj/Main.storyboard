@@ -26,12 +26,6 @@
                                 <rect key="frame" x="34" y="553" width="307" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JlV-cj-0TW">
-                                <rect key="frame" x="0.0" y="48" width="375" height="154"/>
-                                <date key="date" timeIntervalSinceReferenceDate="509684901.84378302">
-                                    <!--2017-02-25 03:08:21 +0000-->
-                                </date>
-                            </datePicker>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4u-kc-tws">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                 <subviews>
@@ -50,22 +44,29 @@
                                     <constraint firstItem="5Sh-HV-5z6" firstAttribute="top" secondItem="h4u-kc-tws" secondAttribute="top" constant="20" id="gg6-Nq-d1d"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pick a date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sbo-0g-wWP">
+                                <rect key="frame" x="118" y="97" width="138" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JlV-cj-0TW" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="28" id="QDF-8w-k6P"/>
-                            <constraint firstItem="JlV-cj-0TW" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="RC1-Zl-nHm"/>
                             <constraint firstItem="h4u-kc-tws" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="deK-o3-Fn2"/>
                             <constraint firstAttribute="trailing" secondItem="h4u-kc-tws" secondAttribute="trailing" id="q4z-38-7df"/>
-                            <constraint firstAttribute="trailing" secondItem="JlV-cj-0TW" secondAttribute="trailing" id="ve6-jH-CMf"/>
                             <constraint firstItem="h4u-kc-tws" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="vkQ-s8-vch"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="datePickerTxt" destination="sbo-0g-wWP" id="GFJ-uA-NKh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="778" y="0.0"/>
+            <point key="canvasLocation" x="776.79999999999995" y="-0.44977511244377816"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="l6U-WA-5zU">
