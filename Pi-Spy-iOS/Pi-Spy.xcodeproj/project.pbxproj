@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5AA7B9EEF02AF65FACBEB93B /* Pods_Pi_Spy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997784F0A2A0A124DE3FB2D8 /* Pods_Pi_Spy.framework */; };
 		C914E34E1E5F8583006D6EEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914E34D1E5F8583006D6EEA /* AppDelegate.swift */; };
 		C914E3501E5F8583006D6EEA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914E34F1E5F8583006D6EEA /* FirstViewController.swift */; };
 		C914E3521E5F8583006D6EEA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914E3511E5F8583006D6EEA /* SecondViewController.swift */; };
@@ -15,6 +16,8 @@
 		C914E35A1E5F8583006D6EEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C914E3581E5F8583006D6EEA /* LaunchScreen.storyboard */; };
 		C914E3651E5F8583006D6EEA /* Pi_SpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914E3641E5F8583006D6EEA /* Pi_SpyTests.swift */; };
 		C914E3701E5F8991006D6EEA /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914E36F1E5F8991006D6EEA /* ThirdViewController.swift */; };
+		C9AA5DB41E8F5871006E253F /* StreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AA5DB31E8F5871006E253F /* StreamingViewController.swift */; };
+		C9AA5DBA1E8F60FC006E253F /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AA5DB91E8F60FC006E253F /* libstdc++.6.0.9.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		997784F0A2A0A124DE3FB2D8 /* Pods_Pi_Spy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pi_Spy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C914E34A1E5F8583006D6EEA /* Pi-Spy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pi-Spy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C914E34D1E5F8583006D6EEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C914E34F1E5F8583006D6EEA /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +44,12 @@
 		C914E3641E5F8583006D6EEA /* Pi_SpyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pi_SpyTests.swift; sourceTree = "<group>"; };
 		C914E3661E5F8583006D6EEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C914E36F1E5F8991006D6EEA /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		C9AA5DAF1E8F5411006E253F /* Pi-Spy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pi-Spy-Bridging-Header.h"; sourceTree = "<group>"; };
+		C9AA5DB31E8F5871006E253F /* StreamingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamingViewController.swift; sourceTree = "<group>"; };
+		C9AA5DB91E8F60FC006E253F /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		C9AA5DBB1E8FFE77006E253F /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = test.mp4; path = ../../../../Desktop/test.mp4; sourceTree = "<group>"; };
+		CE6E45C518310DC416D80215 /* Pods-Pi-Spy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pi-Spy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pi-Spy/Pods-Pi-Spy.release.xcconfig"; sourceTree = "<group>"; };
+		FAC896C0898B5EC99336184C /* Pods-Pi-Spy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pi-Spy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pi-Spy/Pods-Pi-Spy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AA5DBA1E8F60FC006E253F /* libstdc++.6.0.9.tbd in Frameworks */,
+				5AA7B9EEF02AF65FACBEB93B /* Pods_Pi_Spy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +72,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05DD716B188ACA143863285E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FAC896C0898B5EC99336184C /* Pods-Pi-Spy.debug.xcconfig */,
+				CE6E45C518310DC416D80215 /* Pods-Pi-Spy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		26C8A653B64981D6F2656CAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9AA5DB91E8F60FC006E253F /* libstdc++.6.0.9.tbd */,
+				997784F0A2A0A124DE3FB2D8 /* Pods_Pi_Spy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C914E3411E5F8582006D6EEA = {
 			isa = PBXGroup;
 			children = (
 				C914E34C1E5F8583006D6EEA /* Pi-Spy */,
 				C914E3631E5F8583006D6EEA /* Pi-SpyTests */,
 				C914E34B1E5F8583006D6EEA /* Products */,
+				05DD716B188ACA143863285E /* Pods */,
+				26C8A653B64981D6F2656CAD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,10 +117,13 @@
 				C914E34F1E5F8583006D6EEA /* FirstViewController.swift */,
 				C914E3511E5F8583006D6EEA /* SecondViewController.swift */,
 				C914E36F1E5F8991006D6EEA /* ThirdViewController.swift */,
+				C9AA5DB31E8F5871006E253F /* StreamingViewController.swift */,
 				C914E3531E5F8583006D6EEA /* Main.storyboard */,
 				C914E3561E5F8583006D6EEA /* Assets.xcassets */,
 				C914E3581E5F8583006D6EEA /* LaunchScreen.storyboard */,
 				C914E35B1E5F8583006D6EEA /* Info.plist */,
+				C9AA5DAF1E8F5411006E253F /* Pi-Spy-Bridging-Header.h */,
+				C9AA5DBB1E8FFE77006E253F /* test.mp4 */,
 			);
 			path = "Pi-Spy";
 			sourceTree = "<group>";
@@ -109,9 +144,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C914E3691E5F8583006D6EEA /* Build configuration list for PBXNativeTarget "Pi-Spy" */;
 			buildPhases = (
+				96ADC88AF85691AA019384AE /* [CP] Check Pods Manifest.lock */,
 				C914E3461E5F8582006D6EEA /* Sources */,
 				C914E3471E5F8582006D6EEA /* Frameworks */,
 				C914E3481E5F8582006D6EEA /* Resources */,
+				38F012B14A492B52324493A2 /* [CP] Embed Pods Frameworks */,
+				1957FB6EDFB228E238D2D404 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,6 +190,7 @@
 				TargetAttributes = {
 					C914E3491E5F8582006D6EEA = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					C914E35F1E5F8583006D6EEA = {
@@ -200,6 +239,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1957FB6EDFB228E238D2D404 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pi-Spy/Pods-Pi-Spy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38F012B14A492B52324493A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pi-Spy/Pods-Pi-Spy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96ADC88AF85691AA019384AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C914E3461E5F8582006D6EEA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -209,6 +296,7 @@
 				C914E34E1E5F8583006D6EEA /* AppDelegate.swift in Sources */,
 				C914E3701E5F8991006D6EEA /* ThirdViewController.swift in Sources */,
 				C914E3501E5F8583006D6EEA /* FirstViewController.swift in Sources */,
+				C9AA5DB41E8F5871006E253F /* StreamingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,24 +431,33 @@
 		};
 		C914E36A1E5F8583006D6EEA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAC896C0898B5EC99336184C /* Pods-Pi-Spy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Pi-Spy/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.nyu.cims.pcs.Pi-Spy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pi-Spy/Pi-Spy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		C914E36B1E5F8583006D6EEA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE6E45C518310DC416D80215 /* Pods-Pi-Spy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Pi-Spy/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.nyu.cims.pcs.Pi-Spy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pi-Spy/Pi-Spy-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -412,6 +509,7 @@
 				C914E36B1E5F8583006D6EEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C914E36C1E5F8583006D6EEA /* Build configuration list for PBXNativeTarget "Pi-SpyTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +518,7 @@
 				C914E36E1E5F8583006D6EEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

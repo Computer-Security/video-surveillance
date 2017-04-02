@@ -11,6 +11,7 @@ import UIKit
 class FirstViewController: UIViewController {
   
   @IBOutlet weak var datePickerTxt: UITextField!
+  //@IBOutlet weak var datePickerTxt: UITextField!
   let datePicker = UIDatePicker();
   
   override func viewDidLoad() {

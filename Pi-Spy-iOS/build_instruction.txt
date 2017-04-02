@@ -1,0 +1,16 @@
+This project uses Cocoapods to manage dependencies.
+Type following command in terminal to install Cocoapods:
+
+sudo gem install cocoapods
+
+The used dependencies are: 
+	1. MobileVLCKit (for VLC support)
+	2. Alamofire    (for Http Request support)
+
+Dependency installation instruction:
+	1. cd into project directory (there should be a Podfile already)
+	2. type command: 
+		pod install
+	3. open PROJECT.xcworkspace
+	4. build as usual
+
