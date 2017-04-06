@@ -2,10 +2,27 @@ from flask import Flask, request, Response
 from flask import send_file
 from flask import jsonify
 from multiprocessing.connection import Client
+from flask import flash, redirect, render_template, session, abort
 # from camera import Camera
 import thread
+from flask_login import LoginManager, login_required, login_user, logout_user, current_user, UserMixin  
+from flask_sqlalchemy import SQLAlchemy
+import user
+from dbuser import DBUser
 
+# create login manager
+login_manager = LoginManager()
+
+# create app object
 app = Flask(__name__)
+
+# configure database
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/user_account.db'
+db = SQLAlchemy(app)
+
+# configure login manager
+login_manager.init_app(app)
 
 
 @app.route('/')
@@ -17,6 +34,66 @@ def index():
     ]
     
     return jsonify(results=list)
+
+def validate(username, pwd):
+    user = DBUser.query.filter_by(username=username).first()
+    # plain text password
+    if user and user.password == pwd:
+        return unicode(user.id)
+    else:
+        return None
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        uid = validate(username, password)
+        if uid:
+            # login and validate the user
+            user_ = user.User(uid)
+            login_user(user_)
+
+            print uid, 'logged in successfully.'
+            return jsonify({'result': 'success'})
+        else:
+            # login fail
+            return jsonify({'result': 'fail'})
+    else:
+        # for test
+        return Response('''
+        <form action="" method="post">
+            <p><input type=text name=username>
+            <p><input type=password name=password>
+            <p><input type=submit value=Login>
+        </form>
+        ''') 
+
+@login_manager.user_loader
+def load_user(user_id):
+    print 'loading user', user_id
+    return user.User(user_id)
+    # use session id instead of user id to identify users
+    # return User.query.filter_by(session_token=session_token).first()
+
+# test code for session
+@app.route('/test')
+def test():
+    if current_user.is_authenticated:
+        return Response('''
+            <p>success %s</p>
+        '''%(current_user.get_id()))
+    else:
+        return Response('''
+            <p>fail</p>
+        ''')  
+
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return jsonify({'result': 'success'})
 
 def notifyCamera(activate):
     # notify the camera using another thread
@@ -94,5 +171,6 @@ def get_image():
 
 
 if __name__ == '__main__':
-	app.run(debug = True, host = '0.0.0.0')
+    app.secret_key = 'secret_key'
+    app.run(host = '0.0.0.0', debug = True)
 
