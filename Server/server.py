@@ -112,22 +112,23 @@ def toggleCamera(activate):
         conn.send('deactivate')
     conn.close()
 
-@app.route('/activate/<int:post_id>')
-def activateCamera(post_id):
-    # magic number
+@app.route('/activate')
+def activateCamera():
     # avoid accidental access to /activate to change the status of system
-    # should be improved
-    if post_id == 11:
+    if current_user.is_authenticated:
         notifyCamera(True)
-    return 'activate'
+        return jsonify({'result': 'success'})
+    else:
+        return jsonify({'result': 'fail'})
 
-@app.route('/deactivate/<int:post_id>')
-def deactivateCamera(post_id):
-    # magic number
+@app.route('/deactivate')
+def deactivateCamera():
     # avoid accidental access to /deactivate to change the status of system
-    if post_id == 11:
+    if current_user.is_authenticated:
         notifyCamera(False)
-    return 'deactivate'
+        return jsonify({'result': 'success'})
+    else:
+        return jsonify({'result': 'fail'})
 
 @app.route('/alert/<int:post_id>')
 def alert(post_id):
