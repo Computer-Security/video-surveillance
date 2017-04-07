@@ -19,7 +19,8 @@ class StreamingViewController: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     _mediaplayer = VLCMediaPlayer()
     _mediaplayer?.drawable = self.view
-    let fileURL = NSURL(fileURLWithPath: "/Users/pengmingshi/Desktop/test.mp4")
+    //let fileURL = NSURL(fileURLWithPath: "/Users/pengmingshi/Desktop/test.mp4")
+    let fileURL = URL(string: "http://192.168.0.8:8160")
     _mediaplayer?.media = VLCMedia(url: fileURL as URL!)
   }
 
