@@ -8,30 +8,58 @@
 
 import UIKit
 import Alamofire
-
+import SwiftyJSON
 class ThirdViewController: UIViewController {
   @IBOutlet weak var activateSwitch: UISwitch!
+  @IBOutlet weak var statusLabel: UILabel!
+  @IBOutlet weak var upperBackground: UIView!
 
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    activateSwitch.isOn = false
 
     // Do any additional setup after loading the view.
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
   
   @IBAction func switchPressed(_ sender: UISwitch) {
     if (activateSwitch.isOn){
       NSLog("switch on")
-      Alamofire.request("http://serverip/activate")
+      Alamofire.request("http://66.108.38.161:443/activate").responseJSON { response in
+        if let json = response.result.value {
+          print("JSON: \(json)")
+          if let result = JSON(json)["result"].string {
+            if (result=="success"){
+              NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Recording Activated"), object: nil)
+              self.statusLabel.text = "Recording Activated"
+              self.statusLabel.backgroundColor = UIColor(red: 75/255, green: 214/255, blue: 98/255, alpha: 1)
+              self.upperBackground.backgroundColor = UIColor(red: 75/255, green: 214/255, blue: 98/255, alpha: 1)
+            }
+          }
+        }
+      }
     }else{
       NSLog("switch off")
-      Alamofire.request("http://serverip/deactivate")
+      Alamofire.request("http://66.108.38.161:443/deactivate").responseJSON { response in
+
+        if let json = response.result.value {
+          print("JSON: \(json)")
+          if let result = JSON(json)["result"].string {
+            if (result=="success"){
+              NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Recording Deactivated"), object: nil)
+              self.statusLabel.text = "Recording Deactivated"
+              self.statusLabel.backgroundColor = UIColor(red: 255/255, green: 89/255, blue: 60/255, alpha: 1)
+              self.upperBackground.backgroundColor = UIColor(red: 255/255, green: 89/255, blue: 60/255, alpha: 1)
+            }
+          }
+        }
+      }
     }
+  }
+  
+  func changeStatusBar(){
+    
   }
 
     /*

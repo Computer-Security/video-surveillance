@@ -11,12 +11,16 @@ import UIKit
 class FirstViewController: UIViewController {
   
   @IBOutlet weak var datePickerTxt: UITextField!
-  //@IBOutlet weak var datePickerTxt: UITextField!
+  @IBOutlet weak var statusLabel: UILabel!
+  @IBOutlet weak var upperBackground: UIView!
+  
   let datePicker = UIDatePicker();
   
   override func viewDidLoad() {
     super.viewDidLoad()
     createDatePicker()
+    NotificationCenter.default.addObserver(self, selector: #selector(self.statusBarActive), name: NSNotification.Name(rawValue: "Recording Activated"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.statusBarDeactive), name: NSNotification.Name(rawValue: "Recording Deactivated"), object: nil)
   }
 
 
@@ -46,6 +50,18 @@ class FirstViewController: UIViewController {
     
     datePickerTxt.text = dateFormatter.string(from: datePicker.date)
     self.view.endEditing(true);
+  }
+  
+  func statusBarActive(notif: Notification){
+    self.statusLabel.text = "Recording Activated"
+    self.statusLabel.backgroundColor = UIColor(red: 75/255, green: 214/255, blue: 98/255, alpha: 1)
+    self.upperBackground.backgroundColor = UIColor(red: 75/255, green: 214/255, blue: 98/255, alpha: 1)
+  }
+  
+  func statusBarDeactive(notif: Notification){
+    self.statusLabel.text = "Recording Deactivated"
+    self.statusLabel.backgroundColor = UIColor(red: 255/255, green: 89/255, blue: 60/255, alpha: 1)
+    self.upperBackground.backgroundColor = UIColor(red: 255/255, green: 89/255, blue: 60/255, alpha: 1)
   }
 }
 
