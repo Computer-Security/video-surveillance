@@ -10,10 +10,10 @@ import UIKit
 
 class StreamingViewController: UIViewController {
   var _mediaplayer : VLCMediaPlayer?
-  
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    NotificationCenter.default.addObserver(self, selector: #selector(self.getSnapshot), name: NSNotification.Name(rawValue: "snapshotButtonPressed"), object: nil)
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -33,6 +33,17 @@ class StreamingViewController: UIViewController {
     }
   }
 
+  func getSnapshot(notif: Notification){
+    print("Notification received.")
+    let size = (_mediaplayer?.drawable as AnyObject).frame.size
+    UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
+    let rec = (_mediaplayer?.drawable as AnyObject).frame
+    (_mediaplayer?.drawable as AnyObject).drawHierarchy(in: rec!, afterScreenUpdates: false)
+    if let image = UIGraphicsGetImageFromCurrentImageContext(){
+      UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    }
+    UIGraphicsEndImageContext()
+  }
 
   /*
   // MARK: - Navigation

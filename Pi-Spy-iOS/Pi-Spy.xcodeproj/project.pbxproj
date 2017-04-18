@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5AA7B9EEF02AF65FACBEB93B /* Pods_Pi_Spy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997784F0A2A0A124DE3FB2D8 /* Pods_Pi_Spy.framework */; };
+		C90DF9401EA3D5F100FB4DBF /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90DF93F1EA3D5F100FB4DBF /* SwiftyJSON.framework */; };
 		C914E34E1E5F8583006D6EEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914E34D1E5F8583006D6EEA /* AppDelegate.swift */; };
 		C914E3501E5F8583006D6EEA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914E34F1E5F8583006D6EEA /* FirstViewController.swift */; };
 		C914E3521E5F8583006D6EEA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914E3511E5F8583006D6EEA /* SecondViewController.swift */; };
@@ -16,6 +17,9 @@
 		C914E35A1E5F8583006D6EEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C914E3581E5F8583006D6EEA /* LaunchScreen.storyboard */; };
 		C914E3651E5F8583006D6EEA /* Pi_SpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914E3641E5F8583006D6EEA /* Pi_SpyTests.swift */; };
 		C914E3701E5F8991006D6EEA /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914E36F1E5F8991006D6EEA /* ThirdViewController.swift */; };
+		C944E8D11E96C89000066292 /* HoC.png in Resources */ = {isa = PBXBuildFile; fileRef = C944E8D01E96C89000066292 /* HoC.png */; };
+		C98801341E95B4230060DD3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C98801331E95B4230060DD3B /* GoogleService-Info.plist */; };
+		C98801381E9692630060DD3B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98801371E9692630060DD3B /* LoginViewController.swift */; };
 		C9AA5DB41E8F5871006E253F /* StreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AA5DB31E8F5871006E253F /* StreamingViewController.swift */; };
 		C9AA5DBA1E8F60FC006E253F /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AA5DB91E8F60FC006E253F /* libstdc++.6.0.9.tbd */; };
 /* End PBXBuildFile section */
@@ -32,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		997784F0A2A0A124DE3FB2D8 /* Pods_Pi_Spy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pi_Spy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90DF93F1EA3D5F100FB4DBF /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Pi-Spy-hgtoyzxjbeloxrarplmroslpakri/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		C914E34A1E5F8583006D6EEA /* Pi-Spy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pi-Spy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C914E34D1E5F8583006D6EEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C914E34F1E5F8583006D6EEA /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -44,10 +49,13 @@
 		C914E3641E5F8583006D6EEA /* Pi_SpyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pi_SpyTests.swift; sourceTree = "<group>"; };
 		C914E3661E5F8583006D6EEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C914E36F1E5F8991006D6EEA /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		C944E8CF1E96C1BC00066292 /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = test.mp4; path = ../../../../../Desktop/test.mp4; sourceTree = "<group>"; };
+		C944E8D01E96C89000066292 /* HoC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HoC.png; path = ../../../../../Desktop/HoC.png; sourceTree = "<group>"; };
+		C98801331E95B4230060DD3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C98801371E9692630060DD3B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C9AA5DAF1E8F5411006E253F /* Pi-Spy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pi-Spy-Bridging-Header.h"; sourceTree = "<group>"; };
 		C9AA5DB31E8F5871006E253F /* StreamingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamingViewController.swift; sourceTree = "<group>"; };
 		C9AA5DB91E8F60FC006E253F /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
-		C9AA5DBB1E8FFE77006E253F /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = test.mp4; path = ../../../../Desktop/test.mp4; sourceTree = "<group>"; };
 		CE6E45C518310DC416D80215 /* Pods-Pi-Spy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pi-Spy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pi-Spy/Pods-Pi-Spy.release.xcconfig"; sourceTree = "<group>"; };
 		FAC896C0898B5EC99336184C /* Pods-Pi-Spy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pi-Spy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pi-Spy/Pods-Pi-Spy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C90DF9401EA3D5F100FB4DBF /* SwiftyJSON.framework in Frameworks */,
 				C9AA5DBA1E8F60FC006E253F /* libstdc++.6.0.9.tbd in Frameworks */,
 				5AA7B9EEF02AF65FACBEB93B /* Pods_Pi_Spy.framework in Frameworks */,
 			);
@@ -84,10 +93,32 @@
 		26C8A653B64981D6F2656CAD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C90DF93F1EA3D5F100FB4DBF /* SwiftyJSON.framework */,
 				C9AA5DB91E8F60FC006E253F /* libstdc++.6.0.9.tbd */,
 				997784F0A2A0A124DE3FB2D8 /* Pods_Pi_Spy.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C90DF9431EA3FA3800FB4DBF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C98801371E9692630060DD3B /* LoginViewController.swift */,
+				C914E34F1E5F8583006D6EEA /* FirstViewController.swift */,
+				C914E3511E5F8583006D6EEA /* SecondViewController.swift */,
+				C914E36F1E5F8991006D6EEA /* ThirdViewController.swift */,
+				C9AA5DB31E8F5871006E253F /* StreamingViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		C90DF9441EA3FA5000FB4DBF /* Material */ = {
+			isa = PBXGroup;
+			children = (
+				C944E8CF1E96C1BC00066292 /* test.mp4 */,
+				C944E8D01E96C89000066292 /* HoC.png */,
+			);
+			name = Material;
 			sourceTree = "<group>";
 		};
 		C914E3411E5F8582006D6EEA = {
@@ -113,17 +144,15 @@
 		C914E34C1E5F8583006D6EEA /* Pi-Spy */ = {
 			isa = PBXGroup;
 			children = (
+				C90DF9441EA3FA5000FB4DBF /* Material */,
+				C90DF9431EA3FA3800FB4DBF /* ViewController */,
 				C914E34D1E5F8583006D6EEA /* AppDelegate.swift */,
-				C914E34F1E5F8583006D6EEA /* FirstViewController.swift */,
-				C914E3511E5F8583006D6EEA /* SecondViewController.swift */,
-				C914E36F1E5F8991006D6EEA /* ThirdViewController.swift */,
-				C9AA5DB31E8F5871006E253F /* StreamingViewController.swift */,
 				C914E3531E5F8583006D6EEA /* Main.storyboard */,
 				C914E3561E5F8583006D6EEA /* Assets.xcassets */,
 				C914E3581E5F8583006D6EEA /* LaunchScreen.storyboard */,
 				C914E35B1E5F8583006D6EEA /* Info.plist */,
 				C9AA5DAF1E8F5411006E253F /* Pi-Spy-Bridging-Header.h */,
-				C9AA5DBB1E8FFE77006E253F /* test.mp4 */,
+				C98801331E95B4230060DD3B /* GoogleService-Info.plist */,
 			);
 			path = "Pi-Spy";
 			sourceTree = "<group>";
@@ -225,8 +254,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C914E35A1E5F8583006D6EEA /* LaunchScreen.storyboard in Resources */,
+				C98801341E95B4230060DD3B /* GoogleService-Info.plist in Resources */,
 				C914E3571E5F8583006D6EEA /* Assets.xcassets in Resources */,
 				C914E3551E5F8583006D6EEA /* Main.storyboard in Resources */,
+				C944E8D11E96C89000066292 /* HoC.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98801381E9692630060DD3B /* LoginViewController.swift in Sources */,
 				C914E3521E5F8583006D6EEA /* SecondViewController.swift in Sources */,
 				C914E34E1E5F8583006D6EEA /* AppDelegate.swift in Sources */,
 				C914E3701E5F8991006D6EEA /* ThirdViewController.swift in Sources */,
