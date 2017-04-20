@@ -9,6 +9,8 @@ from flask_login import LoginManager, login_required, login_user, logout_user, c
 from flask_sqlalchemy import SQLAlchemy
 import user
 from dbuser import DBUser
+import time
+from apns import APNs, Frame, Payload
 
 # create login manager
 login_manager = LoginManager()
@@ -144,8 +146,13 @@ def alert(post_id):
     return 'success'
 
 def alertApp(flag):
-    # TODO: send message to app
-    return ''
+    apns = APNs(use_sandbox=True, cert_file='CertificatesPush.pem', key_file='key.pem')
+
+    # send a notification to app
+    token_hex = '56BAA775284A0CD45606E9DFC4DD278D367BD938A5AD1DCEA527D1027806983A'
+    payload = Payload(alert="alert", sound="default", badge=1)
+    apns.gateway_server.send_notification(token_hex, payload)
+
 
 
 @app.route('/get_image')
