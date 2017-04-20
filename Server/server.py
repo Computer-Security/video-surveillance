@@ -12,6 +12,8 @@ from dbuser import DBUser
 import time
 from apns import APNs, Frame, Payload
 
+import os, signal
+
 # create login manager
 login_manager = LoginManager()
 
@@ -105,14 +107,14 @@ def notifyCamera(activate):
        print 'Error: unable to start thread to notify camera'
 
 def toggleCamera(activate):
-    # connect to listener camera
-    address = ('localhost', 6000)
-    conn = Client(address, authkey='secret password')
+    # get pid of camera
+    f = open('pid_file', 'rb')
+    camera_pid = int(f.readline().strip())
+    f.close()
     if activate:
-        conn.send('activate')
+        os.kill(camera_pid, signal.SIGUSR1)
     else:
-        conn.send('deactivate')
-    conn.close()
+        os.kill(camera_pid, signal.SIGUSR2)
 
 @app.route('/activate')
 def activateCamera():
