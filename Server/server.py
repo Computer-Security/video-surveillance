@@ -13,6 +13,7 @@ import time
 from apns import APNs, Frame, Payload
 
 import os, signal
+import subprocess
 
 # create login manager
 login_manager = LoginManager()
@@ -28,6 +29,8 @@ db = SQLAlchemy(app)
 # configure login manager
 login_manager.init_app(app)
 
+# process for camera control
+camera_proc = None
 
 @app.route('/')
 def index():
@@ -102,37 +105,42 @@ def logout():
 def notifyCamera(activate):
     # notify the camera using another thread
     try:
-       thread.start_new_thread( toggleCamera, (activate, ) )
+        thread.start_new_thread( toggleCamera, (activate, ) )
     except:
-       print 'Error: unable to start thread to notify camera'
+        print 'Error: unable to start thread to notify camera'
+        return False
+    return True
 
 def toggleCamera(activate):
-    # get pid of camera
-    f = open('pid_file', 'rb')
-    camera_pid = int(f.readline().strip())
-    f.close()
+    global camera_proc
     if activate:
-        os.kill(camera_pid, signal.SIGUSR1)
+        if camera_proc:
+            # send signal for activating motion detection
+            os.kill(camera_proc.pid, signal.SIGUSR1)
     else:
-        os.kill(camera_pid, signal.SIGUSR2)
+        if camera_proc:
+            # send signal for deactivating motion detection
+            os.kill(camera_proc.pid, signal.SIGUSR2)
 
 @app.route('/activate')
 def activateCamera():
     # avoid accidental access to /activate to change the status of system
     if current_user.is_authenticated:
-        notifyCamera(True)
-        return jsonify({'result': 'success'})
-    else:
-        return jsonify({'result': 'fail'})
+        res = notifyCamera(True)
+        if res:
+            return jsonify({'result': 'success'})
+    
+    return jsonify({'result': 'fail'})
 
 @app.route('/deactivate')
 def deactivateCamera():
     # avoid accidental access to /deactivate to change the status of system
     if current_user.is_authenticated:
-        notifyCamera(False)
-        return jsonify({'result': 'success'})
-    else:
-        return jsonify({'result': 'fail'})
+        res = notifyCamera(False)
+        if res:
+            return jsonify({'result': 'success'})
+
+    return jsonify({'result': 'fail'})
 
 @app.route('/alert/<int:post_id>')
 def alert(post_id):
@@ -151,10 +159,10 @@ def alertApp(flag):
     apns = APNs(use_sandbox=True, cert_file='CertificatesPush.pem', key_file='key.pem')
 
     # send a notification to app
-    token_hex = '56BAA775284A0CD45606E9DFC4DD278D367BD938A5AD1DCEA527D1027806983A'
+    # NOTE this is a hard code of a specific device token
+    token_hex = '6FFC2016CAE8BF9310774DDC52CB00F72F6E7386AD2167B8DE5A42471FC8C789'
     payload = Payload(alert="alert", sound="default", badge=1)
     apns.gateway_server.send_notification(token_hex, payload)
-
 
 
 @app.route('/get_image')
@@ -182,5 +190,7 @@ def get_image():
 
 if __name__ == '__main__':
     app.secret_key = 'secret_key'
+     # open a subprocess of camera running
+    camera_proc = subprocess.Popen(['python', 'test_server.py', 'args'])
     app.run(host = '0.0.0.0', debug = True)
 
