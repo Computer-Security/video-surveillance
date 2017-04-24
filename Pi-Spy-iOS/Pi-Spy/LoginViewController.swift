@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
   ]
     print(parameters)
   
-    Alamofire.request("http://66.108.38.161:443/login", method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON(){
+    Alamofire.request("http://66.108.38.161:444/login", method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON(){
       response in
       /*
       print("Request:")

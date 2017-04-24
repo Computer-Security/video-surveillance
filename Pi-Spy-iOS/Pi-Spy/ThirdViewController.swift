@@ -26,7 +26,7 @@ class ThirdViewController: UIViewController {
   @IBAction func switchPressed(_ sender: UISwitch) {
     if (activateSwitch.isOn){
       NSLog("switch on")
-      Alamofire.request("http://66.108.38.161:443/activate").responseJSON { response in
+      Alamofire.request("http://66.108.38.161:444/activate").responseJSON { response in
         if let json = response.result.value {
           print("JSON: \(json)")
           if let result = JSON(json)["result"].string {
@@ -41,7 +41,7 @@ class ThirdViewController: UIViewController {
       }
     }else{
       NSLog("switch off")
-      Alamofire.request("http://66.108.38.161:443/deactivate").responseJSON { response in
+      Alamofire.request("http://66.108.38.161:444/deactivate").responseJSON { response in
 
         if let json = response.result.value {
           print("JSON: \(json)")

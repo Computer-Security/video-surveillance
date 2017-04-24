@@ -20,7 +20,7 @@ class StreamingViewController: UIViewController {
     _mediaplayer = VLCMediaPlayer()
     _mediaplayer?.drawable = self.view
     //let fileURL = NSURL(fileURLWithPath: "/Users/pengmingshi/Desktop/test.mp4")
-    let fileURL = URL(string: "http://192.168.0.8:8160")
+    let fileURL = URL(string: "http://66.108.38.161:443")
     _mediaplayer?.media = VLCMedia(url: fileURL as URL!)
   }
 
