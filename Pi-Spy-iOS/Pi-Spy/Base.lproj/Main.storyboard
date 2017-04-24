@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ehG-7P-uwo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ehG-7P-uwo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -60,7 +60,7 @@
                             <constraint firstItem="aHG-Qk-Uw5" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="55" id="yTP-YN-BOb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="History" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="History" image="Clock-50" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="datePickerTxt" destination="aHG-Qk-Uw5" id="T34-9C-oAn"/>
                         <outlet property="statusLabel" destination="Ort-PB-fg1" id="384-RJ-fmK"/>
@@ -90,13 +90,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="319" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Tf2-w0-1y3">
                                         <rect key="frame" x="0.0" y="30" width="319" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -137,6 +137,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.23921568627450979" green="0.35686274509803922" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="8N6-5B-TMX" firstAttribute="centerX" secondItem="YpX-BG-e0Y" secondAttribute="centerX" id="3i8-gr-Ong"/>
                             <constraint firstItem="Glw-GB-Dmt" firstAttribute="top" secondItem="Tf2-w0-1y3" secondAttribute="bottom" constant="118" id="4d0-Ed-3cN"/>
@@ -154,6 +155,9 @@
                             <constraint firstItem="lKB-tB-GUF" firstAttribute="top" secondItem="8N6-5B-TMX" secondAttribute="bottom" constant="8" id="oql-UX-dQv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Glw-GB-Dmt" secondAttribute="trailing" id="xA6-pA-gkH"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="SuY-dZ-1b5" appends="YES" id="5yA-wv-tpi"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="password" destination="Tf2-w0-1y3" id="Z4s-sS-JuT"/>
@@ -162,6 +166,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S6T-g4-em3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SuY-dZ-1b5">
+                    <connections>
+                        <action selector="screenTapped:" destination="ehG-7P-uwo" id="eYT-1S-e0R"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="726" y="759"/>
         </scene>
@@ -223,7 +232,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="vOc-gJ-Sr2" secondAttribute="trailing" constant="139" id="Vbl-xj-cBn"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Live" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Live" image="Play" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="StreamingSubView" destination="hp1-Au-KeW" id="zuH-b6-649"/>
                         <outlet property="statusLabel" destination="dhy-Z7-LCM" id="yAC-Fh-Jww"/>
@@ -234,7 +243,7 @@
             </objects>
             <point key="canvasLocation" x="1600.8" y="-0.44977511244377816"/>
         </scene>
-        <!--Setup-->
+        <!--Settings-->
         <scene sceneID="0gb-Hv-rz3">
             <objects>
                 <viewController id="LUa-Wn-Ax0" customClass="ThirdViewController" customModule="Pi_Spy" customModuleProvider="target" sceneMemberID="viewController">
@@ -319,7 +328,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="SSp-dY-ct4" secondAttribute="trailing" id="znc-CG-k04"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Setup" id="NbN-t8-cHd"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="NbN-t8-cHd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="activateSwitch" destination="eSs-Rh-lIM" id="Ebv-IN-e89"/>
@@ -394,7 +403,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="Clock-50" width="25" height="25"/>
+        <image name="Play" width="25" height="25"/>
+        <image name="Settings" width="25" height="25"/>
     </resources>
 </document>

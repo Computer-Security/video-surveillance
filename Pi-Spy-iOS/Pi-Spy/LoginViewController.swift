@@ -13,6 +13,9 @@ import SwiftyJSON
 class LoginViewController: UIViewController {
   @IBOutlet weak var username: UITextField!
   @IBOutlet weak var password: UITextField!
+  @IBAction func screenTapped(_ sender: UITapGestureRecognizer) {
+    self.view.endEditing(true)
+  }
   
     override func viewDidLoad() {
         super.viewDidLoad()
