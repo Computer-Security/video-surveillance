@@ -25,6 +25,7 @@ class DBUser(db.Model):
 
 # from dbuser import db
 # from dbuser import DBUser
+# db.create_all()
 # admin = DBUser('admin', '123456')
 # db.session.add(admin)
 # db.session.commit()

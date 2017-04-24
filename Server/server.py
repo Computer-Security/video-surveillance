@@ -1,16 +1,13 @@
 from flask import Flask, request, Response
-from flask import send_file
 from flask import jsonify
 from multiprocessing.connection import Client
 from flask import flash, redirect, render_template, session, abort
-# from camera import Camera
 import thread
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user, UserMixin  
 from flask_sqlalchemy import SQLAlchemy
 import user
 from dbuser import DBUser
 import time
-from apns import APNs, Frame, Payload
 
 import os, signal
 import subprocess
@@ -34,13 +31,7 @@ camera_proc = None
 
 @app.route('/')
 def index():
-    # return for test
-    list = [
-        {'param': 'foo', 'val': 2},
-        {'param': 'bar', 'val': 10}
-    ]
-    
-    return jsonify(results=list)
+    return "hello world"
 
 def validate(username, pwd):
     user = DBUser.query.filter_by(username=username).first()
@@ -83,18 +74,6 @@ def load_user(user_id):
     return user.User(user_id)
     # use session id instead of user id to identify users
     # return User.query.filter_by(session_token=session_token).first()
-
-# test code for session
-@app.route('/test')
-def test():
-    if current_user.is_authenticated:
-        return Response('''
-            <p>success %s</p>
-        '''%(current_user.get_id()))
-    else:
-        return Response('''
-            <p>fail</p>
-        ''')  
 
 @app.route("/logout")
 @login_required
@@ -142,29 +121,6 @@ def deactivateCamera():
 
     return jsonify({'result': 'fail'})
 
-@app.route('/alert/<int:post_id>')
-def alert(post_id):
-    # magic number
-    # avoid accidental access to /alert to alert system
-    if post_id == 11:
-        try:
-            thread.start_new_thread( alertApp, (True, ) )
-        except:
-            print 'Error: unable to start thread to notify application'
-            return 'fail'
-
-    return 'success'
-
-def alertApp(flag):
-    apns = APNs(use_sandbox=True, cert_file='CertificatesPush.pem', key_file='key.pem')
-
-    # send a notification to app
-    # NOTE this is a hard code of a specific device token
-    token_hex = '6FFC2016CAE8BF9310774DDC52CB00F72F6E7386AD2167B8DE5A42471FC8C789'
-    payload = Payload(alert="alert", sound="default", badge=1)
-    apns.gateway_server.send_notification(token_hex, payload)
-
-
 @app.route('/get_image')
 def get_image():
     # send file to client
@@ -172,25 +128,9 @@ def get_image():
 	return send_file(filename, mimetype = 'image/gif')
 
 
-# test for camera frame
-
-# def gen(camera):
-#     """Video streaming generator function."""
-#     while True:
-#         frame = camera.get_frame()
-#         yield (b'--frame\r\n'
-#                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-
-# @app.route('/video_feed')
-# def video_feed():
-#     Video streaming route
-#     return Response(gen(Camera()),
-#                     mimetype='multipart/x-mixed-replace; boundary=frame')
-
-
 if __name__ == '__main__':
     app.secret_key = 'secret_key'
      # open a subprocess of camera running
-    camera_proc = subprocess.Popen(['python', 'test_server.py', 'args'])
-    app.run(host = '0.0.0.0', debug = True)
+    camera_proc = subprocess.Popen(['python', 'pi_surveillance.py', '--conf', 'conf.json'])
+    app.run(host = '0.0.0.0', port = '8280')
 
