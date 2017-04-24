@@ -1,4 +1,4 @@
-from flask.ext.login import UserMixin
+from flask_login import UserMixin
 
 class User(UserMixin):
 
@@ -17,4 +17,3 @@ class User(UserMixin):
 
     def get_id(self):
     	return unicode(self.id)
-    	# return unicode(self.session_token)
