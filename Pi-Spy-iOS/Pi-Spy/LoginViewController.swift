@@ -54,7 +54,15 @@ class LoginViewController: UIViewController {
           if (result == "success"){
             self.performSegue(withIdentifier: "loginSegue", sender: nil)
           }else{
-            let alertController = UIAlertController(title: "User Validation Failed!", message: "Please try again", preferredStyle: UIAlertControllerStyle.alert)
+            var err_message = "Log in failed";
+            if let err = JSON(json)["error"].string {
+                if ("no user found" == err) {
+                    err_message = "User Validation Failed!";
+                } else if ("input not valid" == err) {
+                    err_message = "User input has illegal characters";
+                }
+            }
+            let alertController = UIAlertController(title: err_message, message: "Please try again", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
             self.present(alertController, animated: true, completion: nil)
           }
