@@ -11,6 +11,8 @@ import time
 
 import os, signal
 import subprocess
+import cgi
+import re
 
 # create login manager
 login_manager = LoginManager()
@@ -33,6 +35,16 @@ camera_proc = None
 def index():
     return "hello world"
 
+def sanitize(inputstr):
+    # remove punctuation
+    inputstr = inputstr.strip()
+    # convert charaters '&', '<', '>' to HTML-safe sequences
+    transformed = cgi.escape(inputstr)
+    # check if input is valid
+    if not re.match("^[a-zA-Z0-9_]*$", inputstr):
+        return None
+    return transformed
+
 def validate(username, pwd):
     user = DBUser.query.filter_by(username=username).first()
     # plain text password
@@ -47,17 +59,24 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        uid = validate(username, password)
+
+        username_ = sanitize(username)
+        password_ = sanitize(password)
+
+        if username_ == None or password_ == None:
+            return jsonify({'result': 'fail', 'error': 'input not valid'}) 
+
+        uid = validate(username_, password_)
         if uid:
             # login and validate the user
             user_ = user.User(uid)
             login_user(user_)
 
             print uid, 'logged in successfully.'
-            return jsonify({'result': 'success'})
+            return jsonify({'result': 'success', 'error': ''})
         else:
             # login fail
-            return jsonify({'result': 'fail'})
+            return jsonify({'result': 'fail', 'error': 'no user found'})
     else:
         # for test
         return Response('''
