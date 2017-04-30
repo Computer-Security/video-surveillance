@@ -1,19 +1,25 @@
+'''User class for login'''
 from flask_login import UserMixin
 
 class User(UserMixin):
-
+    '''User class'''
     def __init__(self, uid):
-        self.id = uid
-        self.name = ''
-   	
-   	def get_name(self):
-   		return self.name   
-   		 
+        '''Initialize'''
+        self._id = uid
+        self._name = ''
+
+    def get_name(self):
+        '''Return user name'''
+        return self._name
+
     def set_name(self, name):
-    	self.name = name
-        
+        '''Set user name'''
+        self._name = name
+
     def __repr__(self):
-        return "%d/%s" % (self.id, self.name)
+        '''Return representation of class'''
+        return "%d/%s" % (self._id, self._name)
 
     def get_id(self):
-    	return unicode(self.id)
+        '''Return user id'''
+        return unicode(self._id)

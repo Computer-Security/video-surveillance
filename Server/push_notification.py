@@ -1,6 +1,8 @@
-from apns import APNs, Frame, Payload
+'''Push notification'''
+from apns import APNs, Payload
 
 def alert():
+    '''Alert user using push notification'''
     apns = APNs(use_sandbox=True, cert_file='CertificatesPush.pem', key_file='key.pem')
 
     # send a notification to app
@@ -10,7 +12,8 @@ def alert():
     apns.gateway_server.send_notification(token_hex, payload)
 
 def main():
-	alert()
+    '''Main function'''
+    alert()
 
 if __name__ == '__main__':
-	main()
+    main()
