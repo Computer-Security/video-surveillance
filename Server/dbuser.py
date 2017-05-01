@@ -1,22 +1,26 @@
+'''User model in database'''
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/user_account.db'
-db = SQLAlchemy(app)
+DB = SQLAlchemy(app)
 
 
-class DBUser(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True)
-    password = db.Column(db.String(120), unique=True)
+class DBUser(DB.Model):
+    '''User model class'''
+    id = DB.Column(DB.Integer, primary_key=True)
+    username = DB.Column(DB.String(80), unique=True)
+    password = DB.Column(DB.String(120), unique=True)
 
     def __init__(self, username, password):
+        '''initialize'''
         self.username = username
         self.password = password
 
     def __repr__(self):
+        '''Return representation of class'''
         return '<User %r>' % self.username
 
 
