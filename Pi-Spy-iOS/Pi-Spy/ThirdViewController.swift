@@ -22,15 +22,15 @@ class ThirdViewController: UIViewController {
     // Do any additional setup after loading the view.
   }
 
-  
+
   @IBAction func switchPressed(_ sender: UISwitch) {
-    if (activateSwitch.isOn){
+    if activateSwitch.isOn {
       NSLog("switch on")
       Alamofire.request("http://66.108.38.161:444/activate").responseJSON { response in
         if let json = response.result.value {
           print("JSON: \(json)")
           if let result = JSON(json)["result"].string {
-            if (result=="success"){
+            if result=="success" {
               NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Recording Activated"), object: nil)
               self.statusLabel.text = "Recording Activated"
               self.statusLabel.backgroundColor = UIColor(red: 75/255, green: 214/255, blue: 98/255, alpha: 1)
@@ -39,14 +39,14 @@ class ThirdViewController: UIViewController {
           }
         }
       }
-    }else{
+    }else {
       NSLog("switch off")
       Alamofire.request("http://66.108.38.161:444/deactivate").responseJSON { response in
 
         if let json = response.result.value {
           print("JSON: \(json)")
           if let result = JSON(json)["result"].string {
-            if (result=="success"){
+            if result=="success" {
               NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Recording Deactivated"), object: nil)
               self.statusLabel.text = "Recording Deactivated"
               self.statusLabel.backgroundColor = UIColor(red: 255/255, green: 89/255, blue: 60/255, alpha: 1)
@@ -57,19 +57,15 @@ class ThirdViewController: UIViewController {
       }
     }
   }
-  
-  func changeStatusBar(){
-    
+
+  /*
+  // MARK: - Navigation
+
+  // In a storyboard-based application, you will often want to do a little preparation before navigation
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      // Get the new view controller using segue.destinationViewController.
+      // Pass the selected object to the new view controller.
   }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  */
 
 }

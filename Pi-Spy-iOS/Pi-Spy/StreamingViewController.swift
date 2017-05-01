@@ -9,37 +9,37 @@
 import UIKit
 
 class StreamingViewController: UIViewController {
-  var _mediaplayer : VLCMediaPlayer?
+  var _mediaplayer: VLCMediaPlayer?
 
   override func viewDidLoad() {
     super.viewDidLoad()
     NotificationCenter.default.addObserver(self, selector: #selector(self.getSnapshot), name: NSNotification.Name(rawValue: "snapshotButtonPressed"), object: nil)
   }
-  
+
   override func viewDidAppear(_ animated: Bool) {
     _mediaplayer = VLCMediaPlayer()
     _mediaplayer?.drawable = self.view
-    //let fileURL = NSURL(fileURLWithPath: "/Users/pengmingshi/Desktop/test.mp4")
+    // let fileURL = NSURL(fileURLWithPath: "/Users/pengmingshi/Desktop/test.mp4")
     let fileURL = URL(string: "http://66.108.38.161:443")
     _mediaplayer?.media = VLCMedia(url: fileURL as URL!)
   }
 
-  
+
   @IBAction func viewTapped(_ sender: UITapGestureRecognizer) {
-    if (_mediaplayer?.isPlaying)!{
+    if (_mediaplayer?.isPlaying)! {
       _mediaplayer?.pause()
-    }else{
+    }else {
       _mediaplayer?.play()
     }
   }
 
-  func getSnapshot(notif: Notification){
+  func getSnapshot(notif: Notification) {
     print("Notification received.")
     let size = (_mediaplayer?.drawable as AnyObject).frame.size
     UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
     let rec = (_mediaplayer?.drawable as AnyObject).frame
     (_mediaplayer?.drawable as AnyObject).drawHierarchy(in: rec!, afterScreenUpdates: false)
-    if let image = UIGraphicsGetImageFromCurrentImageContext(){
+    if let image = UIGraphicsGetImageFromCurrentImageContext() {
       UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
     UIGraphicsEndImageContext()

@@ -13,10 +13,11 @@ import SwiftyJSON
 class LoginViewController: UIViewController {
   @IBOutlet weak var username: UITextField!
   @IBOutlet weak var password: UITextField!
+
   @IBAction func screenTapped(_ sender: UITapGestureRecognizer) {
     self.view.endEditing(true)
   }
-  
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,16 +28,16 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-  
+
 
   @IBAction func loginButtonPressed(_ sender: UIButton) {
     let parameters: Parameters = [
-      "username" : username.text!,
-      "password" : password.text!
+      "username": username.text!,
+      "password": password.text!
   ]
     print(parameters)
-  
-    Alamofire.request("http://66.108.38.161:444/login", method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON(){
+
+    Alamofire.request("http://66.108.38.161:444/login", method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON() {
       response in
       /*
       print("Request:")
@@ -50,10 +51,10 @@ class LoginViewController: UIViewController {
       */
       if let json = response.result.value {
         print("JSON: \(json)")
-        if let result = JSON(json)["result"].string{
-          if (result == "success"){
+        if let result = JSON(json)["result"].string {
+          if result == "success" {
             self.performSegue(withIdentifier: "loginSegue", sender: nil)
-          }else{
+          }else {
             let alertController = UIAlertController(title: "User Validation Failed!", message: "Please try again", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
             self.present(alertController, animated: true, completion: nil)
@@ -61,9 +62,8 @@ class LoginViewController: UIViewController {
         }
       }
     }
-    
   }
-  
+
     /*
     // MARK: - Navigation
 
