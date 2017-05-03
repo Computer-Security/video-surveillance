@@ -11,7 +11,7 @@
     ├── key.pem
     ├── dbuser.py                           ## user model in database
     ├── user.py 
-    ├── device_token                        ## ios device token
-    ├── push_notification.py                ## code for sending push notifications                 
+    ├── push_notification.py                ## code for sending push notifications         
+    ├── pi_surveillance.py                   ## camera control script
     └── server.py                           ## code for server
 ```
