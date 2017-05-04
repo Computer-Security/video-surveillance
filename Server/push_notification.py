@@ -7,8 +7,8 @@ def alert():
 
     # send a notification to app
     # NOTE this is a hard code of a specific device token
-    token_hex = '6FFC2016CAE8BF9310774DDC52CB00F72F6E7386AD2167B8DE5A42471FC8C789'
-    payload = Payload(alert="alert", sound="default", badge=1)
+    token_hex = 'xxx'
+    payload = Payload(alert="Alert! Intrusion Detected!", sound="default", badge=1)
     apns.gateway_server.send_notification(token_hex, payload)
 
 def main():
